@@ -38,16 +38,18 @@ describe('strings-tasks', () => {
     assert.equal(tasks.isString(3.14), false);
   });
 
-  it.optional('concatenateStrings should return concatenation of two strings', () => {
-    assert.equal(tasks.concatenateStrings('aa', 'bb'), 'aabb');
-    assert.equal(tasks.concatenateStrings('Hello, ', 'World!'), 'Hello, World!');
-    assert.equal(tasks.concatenateStrings('123', '456'), '123456');
-    assert.equal(tasks.concatenateStrings('', 'bb'), 'bb');
-    assert.equal(tasks.concatenateStrings('', '123'), '123');
-    assert.equal(tasks.concatenateStrings('aa', ''), 'aa');
-    assert.equal(tasks.concatenateStrings('Hello, ', ''), 'Hello, ');
-    assert.equal(tasks.concatenateStrings('', ''), '');
-  });
+  it.optional(
+    'concatenateStrings should return concatenation of two strings',
+    () => {
+      assert.equal(tasks.concatenateStrings('aa', 'bb'), 'aabb');
+      assert.equal(tasks.concatenateStrings('Hello, ', 'World!'), 'Hello, World!');
+      assert.equal(tasks.concatenateStrings('123', '456'), '123456');
+      assert.equal(tasks.concatenateStrings('', 'bb'), 'bb');
+      assert.equal(tasks.concatenateStrings('', '123'), '123');
+      assert.equal(tasks.concatenateStrings('aa', ''), 'aa');
+      assert.equal(tasks.concatenateStrings('Hello, ', ''), 'Hello, ');
+      assert.equal(tasks.concatenateStrings('', ''), '');
+    });
 
   it.optional('getFirstChar should return the first char from given string', () => {
     assert.equal(tasks.getFirstChar('cat'), 'c');
@@ -320,7 +322,7 @@ describe('strings-tasks optimal implementation', () => {
 
     if (!fnStr.includes('return')) {
       this.skip();
-    }   
+    }
 
     assert.equal(
       fnStr.includes('concat'),
